@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import COLORS from "../constants/colors";
 import { Image } from "react-native";
 import IMAGES from "../constants/images";
-import Button from "../components/Button";
+import Button from "../components/MyButton";
 import Icon from "react-native-vector-icons/Ionicons";
 const Welcome = ({ navigation }) => {
   return (
@@ -66,12 +66,13 @@ const Welcome = ({ navigation }) => {
               flexDirection: "row",
               justifyContent: "space-between",
               width: "100%",
+              marginBottom: 20,
             }}
           >
             <Button
               onPress={() => navigation.navigate("Signup")}
               labelColor={COLORS.black}
-              // borderColor={COLORS.black}
+              borderColor={COLORS.white}
               width={170}
               height={45}
               startIcon={
@@ -88,6 +89,11 @@ const Welcome = ({ navigation }) => {
             <Button
               onPress={() => navigation.navigate("Signup")}
               // label={<Text style={{fontSize: 22, fontWeight: 700}}>f</Text>}
+              backgroundColor={"#3a559f"}
+              labelColor={COLORS.white}
+              borderColor={"#3a559f"}
+              width={170}
+              height={45}
               startIcon={
                 <Image
                   source={IMAGES.icon_facebook}
@@ -98,22 +104,17 @@ const Welcome = ({ navigation }) => {
                   }}
                 />
               }
-              backgroundColor={"#3a559f"}
-              labelColor={COLORS.white}
-              // borderColor={"#3a559f"}
-              width={170}
-              height={45}
             ></Button>
           </View>
 
           <TouchableOpacity>
             <Button
               onPress={() => {
-                navigation.navigate("Login");
+                navigation.navigate("Signup");
               }}
               label="SIGN UP WITH EMAIL"
               labelColor={COLORS.black}
-              // borderColor={COLORS.black}
+              borderColor={COLORS.white}
               width="100%"
               height={45}
               startIcon={<Icon name="mail" size={20} color="black"></Icon>}
@@ -154,9 +155,5 @@ const Welcome = ({ navigation }) => {
     </LinearGradient>
   );
 };
-
-// const styles = StyleSheet.create({
-
-// })
 
 export default Welcome;

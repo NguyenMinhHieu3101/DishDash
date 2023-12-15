@@ -1,25 +1,100 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, TextInput, BackHandler } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import COLORS from "../constants/colors";
-
-const Login = () => {
+import Button from "../components/MyButton";
+import { styled } from "nativewind";
+import FONTSIZE from "../constants/fonts";
+import { AntDesign } from "@expo/vector-icons";
+const Login = ({ navigation }) => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+    <SafeAreaView style={styles.container}>
       <View style={{ flex: 1, marginHorizontal: 22 }}>
-        <Text
-          style={{
-            fontSize: 40,
-            fontWeight: 500,
-            color: COLORS.black,
-            marginView: 12,
-          }}
-        >
-          Log In
-        </Text>
+        <View style={{ alignItems: "flex-start" }}>
+          <Button
+            title="Sign Up"
+            onPress={() => navigation.navigate("Welcome")}
+            backgroundColor="transparent"
+            borderColor="transparent"
+            width={"20%"}
+            height={50}
+            startIcon={
+              <AntDesign
+                name="arrowleft"
+                size={24}
+                color="black"
+                style={{ marginRight: 40 }}
+              />
+            }
+          ></Button>
+        </View>
+        <View style={styles.view}>
+          <Text style={styles.title}>Log In</Text>
+          <Text style={styles.text}>
+            Welcome back! You're just a tap away from something delicious.
+          </Text>
+        </View>
+        <View style={styles.view}>
+          <TextInput
+            placeholder="Email"
+            placeholderTextColor={COLORS.grey}
+            style={styles.input}
+          ></TextInput>
+          <TextInput
+            placeholder="Password"
+            secureTextEntry
+            placeholderTextColor={COLORS.grey}
+            style={styles.input}
+          ></TextInput>
+        </View>
+        <View style={{ alignItems: "flex-end" }}>
+          <Text style={{ fontSize: FONTSIZE.small, color: COLORS.blue }}>
+            Forgot Your Password?
+          </Text>
+        </View>
+        <View style={styles.view}>
+          <Button
+            title="Log In"
+            onPress={() => navigation.navigate("HomeScreen")}
+            backgroundColor={COLORS.blue}
+            label="Start Cooking!"
+            labelColor={COLORS.white}
+            borderColor={COLORS.blue}
+            // borderColor={COLORS.white}
+            width={"100%"}
+            height={50}
+          ></Button>
+        </View>
       </View>
     </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.white,
+  },
+  view: {
+    marginTop: 30,
+    marginVertical: 20,
+  },
+  title: {
+    fontSize: FONTSIZE.xlarge,
+    fontWeight: "700",
+    color: COLORS.black,
+  },
+  text: {
+    fontSize: FONTSIZE.medium,
+    fontWeight: "200",
+    color: COLORS.black,
+  },
+  input: {
+    backgroundColor: COLORS.lightgrey,
+    fontSize: FONTSIZE.small,
+    padding: 10,
+    borderRadius: 10,
+    marginVertical: 10,
+  },
+});
 
 export default Login;
