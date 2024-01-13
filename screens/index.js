@@ -1,7 +1,8 @@
-import Login from "./Login";
-import Signup from "./Signup";
-import Welcome from "./Welcome";
-import HomeScreen from "./HomeScreen";
-import Grocery from "./Grocery";
+import Grocery from './Grocery';
+import HomeScreen from './HomeScreen';
+import Login from './Login';
+import Search from './Search';
+import Signup from './Signup';
+import Welcome from './Welcome';
 
-export { Login, Signup, Welcome, HomeScreen, Grocery };
+export { Grocery, HomeScreen, Login, Search, Signup, Welcome };
