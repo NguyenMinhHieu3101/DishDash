@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import COLORS from "../constants/colors";
 import Button from "../components/MyButton";
 import { styled } from "nativewind";
-import FONTSIZE from "../constants/fonts";
+import FONTSIZE from "../constants/fontsize";
 import { AntDesign } from "@expo/vector-icons";
 import CheckBox from "../components/CheckBox";
 const Signup = ({ navigation }) => {

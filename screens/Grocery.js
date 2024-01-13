@@ -5,15 +5,16 @@ import COLORS from "../constants/colors";
 import Button from "../components/MyButton";
 import { styled } from "nativewind";
 import FONTSIZE from "../constants/fontsize";
+import FONTWEIGHT from "../constants/fontweight";
 import { AntDesign } from "@expo/vector-icons";
-const Login = ({ navigation }) => {
+const Grocery = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ flex: 1, marginHorizontal: 22 }}>
         <View style={{ alignItems: "flex-start" }}>
           <Button
             title="Sign Up"
-            onPress={() => navigation.navigate("Welcome")}
+            onPress={() => navigation.navigate("HomeScreen")}
             backgroundColor="transparent"
             borderColor="transparent"
             width={"20%"}
@@ -29,41 +30,13 @@ const Login = ({ navigation }) => {
           ></Button>
         </View>
         <View style={styles.view}>
-          <Text style={styles.title}>Log In</Text>
-          <Text style={styles.text}>
-            Welcome back! You're just a tap away from something delicious.
-          </Text>
+          <Text style={styles.title}>Giỏ Đi Chợ</Text>
         </View>
         <View style={styles.view}>
-          <TextInput
-            placeholder="Email"
-            placeholderTextColor={COLORS.grey}
-            style={styles.input}
-          ></TextInput>
-          <TextInput
-            placeholder="Password"
-            secureTextEntry
-            placeholderTextColor={COLORS.grey}
-            style={styles.input}
-          ></TextInput>
-        </View>
-        <View style={{ alignItems: "flex-end" }}>
-          <Text style={{ fontSize: FONTSIZE.small, color: COLORS.blue }}>
-            Forgot Your Password?
+          <Text style={styles.subtitle2}>
+            {/* {cartData.length} Công thức | {getTotalIngredient()} Nguyên liệu */}
+            0 Công thức | 3 Nguyên liệu
           </Text>
-        </View>
-        <View style={styles.view}>
-          <Button
-            title="Log In"
-            onPress={() => navigation.navigate("Grocery")}
-            backgroundColor={COLORS.blue}
-            label="Start Cooking!"
-            labelColor={COLORS.white}
-            borderColor={COLORS.blue}
-            // borderColor={COLORS.white}
-            width={"100%"}
-            height={50}
-          ></Button>
         </View>
       </View>
     </SafeAreaView>
@@ -75,17 +48,22 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
   },
   view: {
-    marginTop: 30,
+    marginTop: 20,
     marginVertical: 20,
   },
   title: {
     fontSize: FONTSIZE.xlarge,
-    fontWeight: "700",
+    fontWeight: "900",
     color: COLORS.black,
   },
   text: {
     fontSize: FONTSIZE.medium,
     fontWeight: "200",
+    color: COLORS.black,
+  },
+  subtitle2: {
+    fontSize: FONTSIZE.subtitle2,
+    fontWeight: "400",
     color: COLORS.black,
   },
   input: {
@@ -97,4 +75,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Grocery;
