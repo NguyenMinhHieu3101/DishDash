@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Login, Signup, Welcome, HomeScreen } from "./screens";
+import { Login, Signup, Welcome, HomeScreen, Grocery } from "./screens";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -37,6 +37,13 @@ export default function App() {
         <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Grocery"
+          component={Grocery}
           options={{
             headerShown: false,
           }}
